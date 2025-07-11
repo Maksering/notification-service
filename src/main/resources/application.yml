@@ -1,20 +1,5 @@
-server:
-  port: 8082
 spring:
   application:
     name: notification-service
-
-  mail:
-    host: smtp.gmail.com
-    username:
-    password:
-    test-connection: true
-    properties:
-      mail.smtp.auth: true
-      mail.smtp.starttls.enable: true
-      mail.smtp.ssl.trust: smtp.gmail.com
-
-  kafka:
-    bootstrap-servers: localhost:29092
-    consumer:
-      auto-offset-reset: earliest
+  config:
+    import: "configserver:http://external-configuration:8888"
